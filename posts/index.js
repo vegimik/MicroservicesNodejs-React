@@ -48,6 +48,6 @@ app.delete('posts/:id', (req, res)=>{
 
 
 app.listen(4000,  () => {
+    console.log('v:1.0.0');
     console.log('Server started on port 4000'); 
-
 });
