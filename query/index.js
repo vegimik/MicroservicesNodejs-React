@@ -55,7 +55,7 @@ app.listen(4002, async ()=>{
 
     
     try {
-        const res=await axios.get('http://localhost:4005/events')
+        const res=await axios.get('http://event-bus-srv:4005/events')
         for (let index = 0; index < res.length; index++) {
             console.log('====================================');
             console.log('Processing event: ', res[index].type);
