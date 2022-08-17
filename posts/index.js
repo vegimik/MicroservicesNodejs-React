@@ -17,19 +17,21 @@ app.get('/posts', (req, res) => {
     res.send(posts);
 });
 
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
+    console.log('I am starting to do my job for saving the a new post.')
     const id=randomBytes(4).toString('hex');
     const { title, content } = req.body;
     posts[id] = {
         id, title, content
     }
-
+    console.log('I am done with my job to trigger new event.')
     await axios.post('http://event-bus-srv:4005/events', {
         type: 'PostCreated',
         data:{
             id, title, content
         }
-    })
+    })    
+    console.log('I am done with my job to trigger new event.')
 
     res.status(201).send(posts[id]);
 } );

@@ -20,18 +20,18 @@ app.get('/events', (req, res) => {
 app.post('/events',  (req, res)=>{
     const event=req.body
     events.push(event);
-    console.log('Event Bu   : ',event)
+    console.log('Event Bus: ',event)
 
     axios.post('http://posts-clusterip-srv:4000/events', event);
-    // axios.post('http://localhost:4001/events', event);
-    // axios.post('http://localhost:4002/events', event).catch((err) => {
-    //     console.error(err.message);
-    // });
-    // axios.post('http://localhost:4003/events', event).then((result) => {
-    //     console.log('Event Bus request body: ', result.data);        
-    // }).catch((err) => {
-    //     console.error(err.message);
-    // });
+    axios.post('http://comments-srv:4001/events', event);
+    axios.post('http://query-srv:4002/events', event).catch((err) => {
+        console.error(err.message);
+    });
+    axios.post('http://moderation-srv:4003/events', event).then((result) => {
+        console.log('Event Bus request body: ', result.data);        
+    }).catch((err) => {
+        console.error(err.message);
+    });
     
     console.log('I am EventBus project running in Port: ', 4005)
     res.send({status:'OK'})
