@@ -19,7 +19,6 @@ spec:
           image: vegimik/client
 
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
