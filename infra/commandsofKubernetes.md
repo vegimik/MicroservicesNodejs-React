@@ -44,3 +44,8 @@ DEPLOYMENTS COMMANDS
 3. kubectl apply -f [config file name]
 4. kubectl delete deployment [depl_name]
 5. kubcetl rollout restart deployment [depl_name]
+
+
+CREATING CONFIG "STATEMENTS" LITERAL POD
+
+1. kubectl create secret generic pod_config_name --from-literal=pod_config_key=example_secret_key
