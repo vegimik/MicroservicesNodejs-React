@@ -44,6 +44,13 @@ DEPLOYMENTS COMMANDS
 3. kubectl apply -f [config file name]
 4. kubectl delete deployment [depl_name]
 5. kubcetl rollout restart deployment [depl_name]
+6. More Commands:
+    6.1. kubectl get namespaces
+    6.2. kubectl get services -n namespace_id
+    Note: the url for calling api is: 
+        Definition: http://namespace_of_service.namespace.svc.cluster.local/
+        Example:    http://ingress-nginx-controller.svc.cluster.local
+    
 
 
 CREATING CONFIG "STATEMENTS" LITERAL POD
