@@ -56,3 +56,6 @@ DEPLOYMENTS COMMANDS
 CREATING CONFIG "STATEMENTS" LITERAL POD
 
 1. kubectl create secret generic pod_config_name --from-literal=pod_config_key=example_secret_key
+
+# Port Forward
+kubectl port-forward nats_pod_id port_source:port_target
