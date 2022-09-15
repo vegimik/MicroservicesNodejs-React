@@ -59,3 +59,18 @@ CREATING CONFIG "STATEMENTS" LITERAL POD
 
 # Port Forward
 kubectl port-forward nats_pod_id port_source:port_target
+
+NATS Streaming Server:
+
+Option 1:
+Publisher Program -> [Ingress-Nginx <--> NATS ClusterIP Service <--> NATS Pod]
+
+Option 2:
+Publisher program -> [NodePort Service <--> NATS Pod]
+
+Option 3:
+Publisher program -> [Port Forward Port 4222 <--> NATS Pod]
+
+kubectl port-forward nats_pod_id port_source:port_target
+
+# For monitoring fo to: localhost:8222, for more info explore over links
